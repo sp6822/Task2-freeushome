@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <EditText
+        android:id="@+id/num1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="הכנס a"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText
+        android:id="@+id/num2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="הכנס b"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText
+        android:id="@+id/num3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="הכנס c"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnSolve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="חשב"
+        android:onClick="solveEquation"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnRandom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="הגרל"
+        android:onClick="creat_random"/>
+</LinearLayout>
