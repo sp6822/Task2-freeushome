@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("a", a);
         intent.putExtra("b", b);
         intent.putExtra("c", c);
-        startActivity(intent);
+
     }
 
     public void creat_random(View view) {
