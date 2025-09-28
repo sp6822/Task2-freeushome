@@ -9,25 +9,23 @@
         android:id="@+id/num1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="הכנס a"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="12dp"/>
+        android:inputType="numberSigned"
+        android:hint="a" />
 
     <EditText
         android:id="@+id/num2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="הכנס b"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="12dp"/>
+        android:inputType="numberSigned"
+        android:hint="b" />
 
     <EditText
         android:id="@+id/num3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="הכנס c"
-        android:inputType="numberDecimal"
-        android:layout_marginBottom="24dp"/>
+        android:inputType="numberSigned"
+        android:hint="c" />
+
 
     <Button
         android:id="@+id/btnSolve"

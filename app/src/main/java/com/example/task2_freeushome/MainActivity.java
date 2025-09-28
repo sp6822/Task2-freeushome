@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,16 +23,30 @@ public class MainActivity extends AppCompatActivity {
         num3 = findViewById(R.id.num3);
     }
 
-    private double getValue(EditText editText) {
-        String text = editText.getText().toString();
-        if (text.isEmpty()) return 0;
-        return Double.parseDouble(text);
+    private Double getValue(EditText editText) {
+        String text = editText.getText().toString().trim();
+
+        if (text.isEmpty() || text.equals("-") || text.equals(".") || text.equals("0")) {
+            Toast.makeText(this, "קלט לא תקין! הכנס מספר חוקי", Toast.LENGTH_SHORT).show();
+            return null;
+        }
+
+        try {
+            return Double.parseDouble(text);
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, "קלט לא תקין! הכנס מספר חוקי", Toast.LENGTH_SHORT).show();
+            return null;
+        }
     }
 
     public void solveEquation(View view) {
-        double a = getValue(num1);
-        double b = getValue(num2);
-        double c = getValue(num3);
+        Double a = getValue(num1);
+        Double b = getValue(num2);
+        Double c = getValue(num3);
+
+        if (a == null || b == null || c == null) {
+            return;
+        }
 
         Intent intent = new Intent(this, ResultActivity.class);
         intent.putExtra("a", a);
@@ -42,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void creat_random(View view) {
         Random random = new Random();
-        int a = random.nextInt(10); // בין 0 ל-9
+        int a = random.nextInt(10);
         int b = random.nextInt(10);
         int c = random.nextInt(10);
 
